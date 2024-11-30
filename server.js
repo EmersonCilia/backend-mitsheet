@@ -37,13 +37,11 @@ const server = createServer((req, res) => {
   });
 });
 
-
-const io = new socketIo(server, {
-  cors: {
-    origin: "https://mit-spreadsheet.vercel.app", //frontend URL
-    methods: ["GET", "POST"]
-  }
+server.listen(PORT, () => {
+  console.log(`Server running on ${PORT}`);
 });
+
+const io = new socketIo(server);
 
 io.on('connection', (socket) => {
   console.log('A user connected:', socket.id);
