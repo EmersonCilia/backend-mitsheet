@@ -40,7 +40,7 @@ const server = createServer((req, res) => {
 
 const io = new socketIo(server, {
   cors: {
-    origin: "https://mit-spreadsheet.vercel.app", // your frontend URL
+    origin: "https://mit-spreadsheet-9b5dudrjq-emersoncilias-projects.vercel.app", //frontend URL
     methods: ["GET", "POST"]
   }
 });
