@@ -36,17 +36,11 @@ const server = createServer((req, res) => {
     }
   });
 });
-const corsOptions = {
-    origin: "https://mit-spreadsheet-9b5dudrjq-emersoncilias-projects.vercel.app", // your frontend URL
-    methods: ["GET", "POST"],
-};
-server.listen(PORT, () => {
-  console.log(`Server running on ${PORT}`);
-});
+
 
 const io = new socketIo(server, {
   cors: {
-    origin: "https://mit-spreadsheet-9b5dudrjq-emersoncilias-projects.vercel.app", // your frontend URL
+    origin: "https://mit-spreadsheet.vercel.app", // your frontend URL
     methods: ["GET", "POST"]
   }
 });
